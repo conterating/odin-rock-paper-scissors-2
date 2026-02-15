@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function getComputerChoice() {
   const randomNum = Math.random();
   let compChoice;
@@ -20,6 +17,9 @@ function getHumanChoice() {
 }
 
 function playGame() {
+  let humanScore = 0;
+  let computerScore = 0;
+
   function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     if (
