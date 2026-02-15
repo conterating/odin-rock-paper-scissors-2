@@ -19,4 +19,23 @@ function getHumanChoice() {
   return userChoice;
 }
 
-console.log(getHumanChoice());
+function playRound(humanChoice, computerChoice) {
+  humanChoice = humanChoice.toLowerCase();
+  if (
+    (humanChoice == "rock" && computerChoice == "scissors") ||
+    (humanChoice == "paper" && computerChoice == "rock") ||
+    (humanChoice == "scissors" && computerChoice == "paper")
+  ) {
+    ++humanScore;
+    console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+  } else if (
+    (computerChoice == "rock" && humanChoice == "scissors") ||
+    (computerChoice == "paper" && humanChoice == "rock") ||
+    (computerChoice == "scissors" && humanChoice == "paper")
+  ) {
+    ++computerScore;
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+  } else {
+    console.log(`Tie! You both choose ${computerChoice}`);
+  }
+}
